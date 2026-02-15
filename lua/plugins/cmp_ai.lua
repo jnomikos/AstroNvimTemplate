@@ -2,9 +2,8 @@ return {
   "Saghen/blink.cmp",
   optional = true,
   opts = function(_, opts)
-    if not opts.keymap then
-      opts.keymap = {}
-    end
+    opts.keymap = opts.keymap or {}
+
     opts.keymap["<Tab>"] = {
       "snippet_forward",
       function()
@@ -12,16 +11,20 @@ return {
           return vim.g.ai_accept()
         end
       end,
+      "select_next",
+      "select_and_accept",
       "fallback",
     }
-    opts.keymap["<S-Tab>"] = { 
+
+    opts.keymap["<S-Tab>"] = {
       "snippet_backward",
       function()
         if vim.g.ai_clear then
           return vim.g.ai_clear()
         end
       end,
-      "fallback", 
+      "select_prev",
+      "fallback",
     }
   end,
 }
