@@ -9,7 +9,7 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "onedark_dark",
+    colorscheme = "monokai-pro-ristretto",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
@@ -17,6 +17,9 @@ return {
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
+      },
+      onedark = { -- a table of overrides/changes when applying the onedark theme
+        -- Normal = { bg = "#121212" }
       },
     },
     -- Icons can be configured throughout the interface
